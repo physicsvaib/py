@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>first.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(0,128,128); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+first.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">from </span><span class="s1">itertools </span><span class="s0">import </span><span class="s1">chain 
+ 
+ 
+</span><span class="s0">class </span><span class="s1">SolarSystem: 
+    planets = [list(chain(planet, (index + </span><span class="s2">1</span><span class="s1">,))) </span><span class="s0">for </span><span class="s1">index, planet </span><span class="s0">in </span><span class="s1">enumerate(( 
+        (</span><span class="s3">'Mercury'</span><span class="s1">, </span><span class="s3">'hot'</span><span class="s1">, </span><span class="s2">2240</span><span class="s1">), 
+        (</span><span class="s3">'Venus'</span><span class="s1">, </span><span class="s3">'sulphurous'</span><span class="s1">, </span><span class="s2">6052</span><span class="s1">), 
+        (</span><span class="s3">'Earth'</span><span class="s1">, </span><span class="s3">'fertile'</span><span class="s1">, </span><span class="s2">6378</span><span class="s1">), 
+        (</span><span class="s3">'Mars'</span><span class="s1">, </span><span class="s3">'reddish'</span><span class="s1">, </span><span class="s2">3397</span><span class="s1">), 
+        (</span><span class="s3">'Jupiter'</span><span class="s1">, </span><span class="s3">'stormy'</span><span class="s1">, </span><span class="s2">71492</span><span class="s1">), 
+        (</span><span class="s3">'Saturn'</span><span class="s1">, </span><span class="s3">'ringed'</span><span class="s1">, </span><span class="s2">60268</span><span class="s1">), 
+        (</span><span class="s3">'Uranus'</span><span class="s1">, </span><span class="s3">'cold'</span><span class="s1">, </span><span class="s2">25559</span><span class="s1">), 
+        (</span><span class="s3">'Neptune'</span><span class="s1">, </span><span class="s3">'very cold'</span><span class="s1">, </span><span class="s2">24766</span><span class="s1">) 
+    ))] 
+ 
+    lines = ( 
+        </span><span class="s3">'{} is a {} planet'</span><span class="s1">, 
+        </span><span class="s3">'The radius of {} is {} km'</span><span class="s1">, 
+        </span><span class="s3">'{} is planet nr. {} counting from the sun'</span><span class="s1"> 
+    ) 
+ 
+    </span><span class="s0">def </span><span class="s1">__init__(self): 
+        self.lineIndex = </span><span class="s2">0</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">greet(self): 
+        self.planet = self.planets[int(Math.random() * len(self.planets))] 
+        document.getElementById(</span><span class="s3">'greet'</span><span class="s1">).innerHTML = </span><span class="s3">'Hello {}'</span><span class="s1">.format(self.planet[</span><span class="s2">0</span><span class="s1">]) 
+        self.explain() 
+ 
+    </span><span class="s0">def </span><span class="s1">explain(self): 
+        document.getElementById(</span><span class="s3">'explain'</span><span class="s1">).innerHTML = ( 
+            self.lines[self.lineIndex].format(self.planet[</span><span class="s2">0</span><span class="s1">], self.planet[self.lineIndex + </span><span class="s2">1</span><span class="s1">]) 
+        ) 
+        self.lineIndex = (self.lineIndex + </span><span class="s2">1</span><span class="s1">) % </span><span class="s2">3</span><span class="s1"> 
+ 
+ 
+solarSystem = SolarSystem() 
+</span></pre>
+</body>
+</html>
