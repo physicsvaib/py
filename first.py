@@ -1,31 +1,28 @@
-# tkinter tutorials
+#importing tkinter
 from tkinter import *
-
-
+#main functioning starts
 class window(Frame):
-    def __init__(x, master=None):
-        Frame.__init__(x, master)
-        x.y()
-
-    def y(x):
-        x.master.title("new program")
-        x.pack(fill=BOTH, expand=6)
-        quit = Button(x, text="quit", command=x.exit)
-        quit.place(x=0, y=0)
-        m=Menu(x.master)
-        x.master.config(m=m)
-        file=Menu(m)
-        file.add_command(label='exit',command=x.exit)
-        m.add_cascade(label='file',m=file)
-        edit=Menu(m)
-        edit.add_command(label="save",command=x.exit)
-        edit.add_command(label='undo')
-        m.add_cascade(label='edit',m=edit)
-    def exit(self):
+    def __init__(self,master=NONE):
+        Frame.__init__(self,master)
+        self.master=master
+        self.y()
+    def y(self):
+        self.master.title("hello again")
+        self.pack(fill=BOTH,expand=6)
+        quit=Button(self,text="quit",command=self.x)
+        quit.place(x=0,y=0)
+        menu=Menu(self.master)
+        self.master.config(menu=menu)
+        file=Menu(menu)
+        file.add_command(label="menu",command=self.x)
+        menu.add_cascade(label="file",menu=file)
+        edit=Menu(menu)
+        edit.add_command(label="edit",command=self.x)
+        edit.add_command(label="new")
+        menu.add_cascade(label="edit",menu=edit)
+    def x(self):
         exit()
-
-
-root = Tk()
-root.geometry("500x300")
-app = window(root)
-root.mainloop()
+ro=Tk()
+app1=window(ro)
+ro.geometry('300x400')
+ro.mainloop()
